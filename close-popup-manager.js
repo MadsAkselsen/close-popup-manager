@@ -1,8 +1,4 @@
 
-//     element: Element|HTMLElement
-//     ctx: any
-//     closeFn: Function
-
 const elementCloseManager = new class extends EventTarget {
     constructor() {
         super();
@@ -14,8 +10,9 @@ const elementCloseManager = new class extends EventTarget {
         })
     }
 
-    _elements = [];
-
+    //  element: Element|HTMLElement
+    //  ctx: any
+    //  closeFn: Function
     async addElement(closeFn, ctx, element) {
         // wrapping in setTimeout to make sure the element has been added to the DOM.
         // Otherwise, getBoundingClientRect() don't know the coordinates of the element.
@@ -28,6 +25,8 @@ const elementCloseManager = new class extends EventTarget {
             
         }, 100)
     }
+
+    _elements = [];
 
     _closeElements(e) {
         const x = e.clientX;
