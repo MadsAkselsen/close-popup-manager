@@ -1,9 +1,6 @@
 
-const elementCloseManager = new class extends EventTarget {
+const elementCloseManager = new class {
     constructor() {
-        super();
-        
-        this._closeElements = this._closeElements.bind(this);
 
         window.addEventListener("click", (e) => {
             this._closeElements(e);
