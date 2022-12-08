@@ -1,7 +1,6 @@
 
 const elementCloseManager = new class {
     constructor() {
-
         window.addEventListener("click", (e) => {
             this._closeElements(e);
         })
